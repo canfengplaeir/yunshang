@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import ThemeToggle from './ThemeToggle.vue'
 
 const links = [
   { name: '首页', path: '/' },
@@ -126,31 +127,40 @@ const closeMenu = () => {
 
 <template>
   <Transition name="fade-slide" appear>
-    <nav class="navbar bg-base-100 shadow-lg px-4 sticky top-0 z-50">
+    <nav class="navbar bg-base-100/80 backdrop-blur-sm shadow-lg px-4 sticky top-0 z-50">
       <div class="flex-1">
         <router-link 
           to="/" 
-          class="btn btn-ghost text-xl hover:scale-105 transition-transform"
+          class="btn btn-ghost text-xl hover:scale-105 transition-transform group"
           @click="closeMenu"
         >
-          <img src="/logo.png" class="w-8 h-8 mr-2" />
-          云上工作室
+          <img 
+            src="/logo.jpg" 
+            class="w-8 h-8 mr-2 transform transition-transform group-hover:rotate-12" 
+          />
+          <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            云上工作室
+          </span>
         </router-link>
       </div>
       
       <!-- 桌面端导航 -->
       <div class="desktop-nav">
+        <ThemeToggle class="mr-4" />
         <ul class="flex space-x-4">
           <li v-for="link in links" :key="link.path">
             <router-link 
               :to="link.path"
-              class="desktop-link"
-              :class="{ 'text-primary font-bold': route.path === link.path }"
+              class="desktop-link relative"
+              :class="{ 
+                'text-primary font-bold': route.path === link.path,
+                'hover:text-primary/80': route.path !== link.path
+              }"
             >
               {{ link.name }}
               <div 
                 v-if="route.path === link.path"
-                class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary transition-all"
+                class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all"
               ></div>
             </router-link>
           </li>
@@ -159,6 +169,7 @@ const closeMenu = () => {
       
       <!-- 移动端导航 -->
       <div class="mobile-nav">
+        <ThemeToggle class="mr-2" />
         <button 
           class="hamburger p-2"
           :class="{ 'active': isMenuOpen }"

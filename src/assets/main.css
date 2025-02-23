@@ -1,4 +1,54 @@
+@import './animations.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './animations.css'; 
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/fonts/minecraft.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Toast 样式覆盖 */
+.minecraft-toast {
+  font-family: 'Minecraft', monospace !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.minecraft-toast.Vue-Toastification__toast--success {
+  border-left: 4px solid hsl(var(--success)) !important;
+}
+
+.minecraft-toast.Vue-Toastification__toast--error {
+  border-left: 4px solid hsl(var(--error)) !important;
+}
+
+.minecraft-toast.Vue-Toastification__toast--warning {
+  border-left: 4px solid hsl(var(--warning)) !important;
+}
+
+.minecraft-toast.Vue-Toastification__toast--info {
+  border-left: 4px solid hsl(var(--info)) !important;
+}
+
+.minecraft-toast .Vue-Toastification__progress-bar {
+  background: linear-gradient(to right, 
+    hsl(var(--primary)), 
+    hsl(var(--secondary))
+  ) !important;
+  height: 3px !important;
+}
+
+.minecraft-toast .Vue-Toastification__close-button {
+  color: rgba(255, 255, 255, 0.6) !important;
+  transition: color 0.2s ease !important;
+}
+
+.minecraft-toast .Vue-Toastification__close-button:hover {
+  color: rgba(255, 255, 255, 0.9) !important;
+} 

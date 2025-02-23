@@ -5,7 +5,7 @@ import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+  <div class="min-h-screen bg-gradient-to-b from-base-200 to-base-100">
     <NavBar />
     
     <main class="container mx-auto px-4 py-8">
@@ -16,6 +16,6 @@ import Footer from './components/Footer.vue'
       </RouterView>
     </main>
 
-    <Footer class="border-t bg-white mt-20" />
+    <Footer class="border-t bg-base-100 mt-20" />
   </div>
 </template> 
