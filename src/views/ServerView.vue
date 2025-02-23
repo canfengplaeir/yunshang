@@ -793,7 +793,7 @@ const playerStats = ref([
 /* 添加 Minecraft 字体支持 */
 @font-face {
   font-family: 'Minecraft';
-  src: url('/fonts/Minecraft AE.ttf') format('truetype');
+  src: url('https://objectstorageapi.bja.sealos.run/g6rnmc1y-yunshang/Minecraft AE.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

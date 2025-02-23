@@ -36,7 +36,7 @@ onMounted(() => {
     :title="isDark ? '切换到亮色模式' : '切换到暗色模式'"
   >
     <img 
-      :src="isDark ? '/mc_icon/block/glowstone.png' : '/mc_icon/block/redstone_torch.png'"
+      :src="isDark ? 'https://objectstorageapi.bja.sealos.run/g6rnmc1y-yunshang/glowstone.png' : 'https://objectstorageapi.bja.sealos.run/g6rnmc1y-yunshang/redstone_torch.png'"
       class="w-6 h-6"
       :class="{ 'animate-pulse': !isDark }"
     />
