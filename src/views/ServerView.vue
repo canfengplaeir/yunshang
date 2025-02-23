@@ -763,7 +763,7 @@ const playerStats = ref([
         <div class="card bg-gradient-to-br from-base-200/50 to-transparent backdrop-blur-sm shadow-xl">
           <div class="card-body">
             <h2 class="card-title text-2xl mb-4 flex items-center gap-2">
-              <img src="/mc_icon/item/oak_sign.png" class="w-8 h-8" />
+              <img src="https://objectstorageapi.bja.sealos.run/g6rnmc1y-yunshang/oak_sign.png" class="w-8 h-8" />
               最新公告
             </h2>
             <div class="space-y-4">
