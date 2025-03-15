@@ -83,7 +83,7 @@ const serverStatus = ref({
   players: 0,
   maxPlayers: 0,
   version: '1.20.4',
-  ip: 'especial.top',
+  ip: 'mc.especial.top',
   motd: '',
   ping: 0,
   protocol: 0,
